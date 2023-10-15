@@ -1,0 +1,125 @@
+*{
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------ body ----  */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .container {
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+  }
+
+/* ------ highscore-view -----  */
+
+  .scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;  
+    font-size: 20px;  
+  } 
+  .scores a {    
+    color: aquamarine;
+    text-decoration: none;
+    transition: color 0.5s;    
+  }
+  .scores a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #030f11;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+  }
+  .scores a:hover::after{
+    width: 100%;
+}
+  .scores a:hover {
+    color: black;
+  }  
+  
+  ol {
+    padding-left: 0px;
+    max-height: 400px;
+    overflow: auto;
+  }
+
+ 
+
+  /* ------- timer -----  */
+
+  .timer {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+  }
+
+  /* -------- strat info -----  */
+
+  .start {
+    text-align: center;
+  }
+
+  /* ------- questions disply ------  */
+
+  .hide {
+    display: none;
+  }
+  .choices button {
+    display: block;
+  }
+   
+  /* ------ button -----  */
+
+  button {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 100%;
+    background-color: rgb(23, 18, 74);
+    border-radius: 5px;
+    padding: 3px 10px;
+    color: white;
+    border: 0;
+    transition: background-color 0.1s;
+  }
+  
+  button:hover {
+    background-color: rgb(127, 157, 143);
+  }
+  
+    
+  input[type="text"] {
+    font-size: 100%;
+  }
+
+  li {
+    padding: 5px;
+    list-style: decimal inside none;
+  }
+  
+  li:nth-child(odd) {
+    background-color: #dfdae7;
+  }
+
+  .feedback {
+    font-style: normal;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 10px;
+    color: gray;
+    border-top: 2px solid rgb(201, 193, 193);
+  }
+ 
+  
+  
