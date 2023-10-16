@@ -57,12 +57,11 @@ var questions = [
 
 
 // selecting DOM elements 
-var questionsEl = document.querySelector("#questions");
+var startBtn = document.querySelector("#start");
 var timerEl = document.querySelector("#time");
-var choices = document.querySelector("#choices");
+var questionsEl = document.querySelector("#questions");
 var choicesEl = document.querySelector("#choices");
 var submitBtn = document.querySelector("#submit");
-var startBtn = document.querySelector("#start");
 var initialsEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
 
@@ -70,12 +69,8 @@ var feedbackEl = document.querySelector("#feedback");
 // questions variables
 var activeQuestionIndex = 0;
 var secondsLeft = questions.length * 15;
-var timerId;
+var setTimer;
 
-// questions variables
-var activeQuestionIndex = 0;
-var secondsLeft = questions.length * 15;
-var timerId;
 
 // WHEN start button clicked timer starts and question displeyed:
     // creat event event litsiner   
@@ -91,37 +86,36 @@ function startQuiz() {
      questionsEl.removeAttribute("class");
 
     // start timer
-    timerId = setInterval(setTime, 1000);
+    setTimer = setInterval(setTime, 1000);
 
      // disply timer
      timerEl.textContent = secondsLeft;
 
      startQuestion();
-
 }
-// WHEN first question answered another question presented 
-    
+
+// WHEN first question answered another question presented     
 function startQuestion() {
 
     // get first question
     var activeQuestion = questions[activeQuestionIndex];
 
     // update title with active question
-    var titleEl = document.querySelector("#question-title")
+    var titleEl = document.querySelector("#title")
     titleEl.textContent = activeQuestion.title;
 
     // clear previous choices
     choicesEl.innerHTML = "";
 
-    // loop over choices
-    activeQuestion.choices.forEach(function(choice, i) {
+    // loop over choices    
+    activeQuestion.choices.forEach(function(choice) {
 
-        // creat button for each chice
+        // creat button for each choice
         var choiceButton = document.createElement("button");
         choiceButton.setAttribute("class", "choice");
         choiceButton.setAttribute("value", choice);
 
-        choiceButton.textContent = i + choice;
+        choiceButton.textContent = choice;
 
         // click event for each choice
         choiceButton.addEventListener("click", choiceClick);
@@ -149,7 +143,7 @@ function choiceClick() {
         // displying updated time on the page
         timerEl.textContent = secondsLeft;
         feedbackEl.textContent = "Wrong!";
-        feedbackEl.style.color = "red";
+        feedbackEl.style.color = "black";
         feedbackEl.style.fontSize = "300%";
     } else {
         feedbackEl.textContent = "Correct!";
@@ -166,13 +160,12 @@ function choiceClick() {
     // next question disply
     activeQuestionIndex++;
 
-// WHEN all questions are answered or the timer reaches 0 the game is over
+ // WHEN all questions are answered or the timer reaches 0 the game is over
     // check if user ran out of time or all questions are answered
     // clear interval
     // hide questions section
     // show the final score
-
-
+    
     // check for last question
     if (activeQuestionIndex === questions.length) {
         endQuestion();        
@@ -184,7 +177,7 @@ function choiceClick() {
 // function to end the quiz
 function endQuestion() {
     // stop timer
-    clearInterval(timerId);
+    clearInterval(setTimer);
 
     // disply input for initials
     var inputEl = document.querySelector('#save-score');

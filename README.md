@@ -1,3 +1,9 @@
+# Code Quiz
+
+## Description
+This application deployes multiple choice questions to asses programming skills.
+
+## Deployed Link
 
 
 ## User Story
@@ -17,3 +23,15 @@
 * THEN the game is over
 * WHEN the game is over
 * THEN I can save my initials and score
+
+## Screenshot
+
+## Technologies
+ * HTML
+ * CSS
+ * Javascript
+
+ ## References
+
+ ## License
+ MIT
