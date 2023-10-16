@@ -4,7 +4,7 @@
 This application deployes multiple choice questions to asses programming skills.
 
 ## Deployed Link
-
+* https://berheamanuel.github.io/code-quiz-app/
 
 ## User Story
 * AS A coding boot camp student
@@ -25,6 +25,8 @@ This application deployes multiple choice questions to asses programming skills.
 * THEN I can save my initials and score
 
 ## Screenshot
+![screenshot](./assets/Screenshot-1.png)
+![screenshot](./assets/Screenshot-2.png)
 
 ## Technologies
  * HTML
@@ -32,6 +34,7 @@ This application deployes multiple choice questions to asses programming skills.
  * Javascript
 
  ## References
-
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+* https://developer.mozilla.org/en-US/docs/Web/API
  ## License
  MIT
